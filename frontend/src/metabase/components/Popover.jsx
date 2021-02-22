@@ -27,7 +27,6 @@ export default class Popover extends Component {
     };
 
     this._popoverElement = this._createPopoverElement();
-    document.body.appendChild(this._popoverElement);
   }
 
   static propTypes = {
@@ -81,6 +80,8 @@ export default class Popover extends Component {
   }
 
   componentDidMount() {
+    document.body.appendChild(this._popoverElement);
+
     this._updateContainerClass();
 
     if (this.props.isOpen) {
